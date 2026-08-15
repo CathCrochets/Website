@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://cathcrochets.co.uk/sitemap.xml
