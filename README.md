@@ -8,13 +8,15 @@ Open `index.html` directly, or serve this directory with any static file server.
 
 ## GitHub Pages
 
-The deployable site is at the repository root. In GitHub, choose **Settings → Pages → Deploy from a branch**, then select the main branch and `/ (root)`. The included `CNAME` file is set to `cathcrochets.co.uk`.
+The site deploys automatically from `main` through `.github/workflows/pages.yml` and is published at:
+
+**https://cathcrochets.github.io/Website/**
 
 ## Before taking live orders
 
 - Connect checkout to Stripe, Shopify, Snipcart, or another payment/order provider.
 - Connect the newsletter form to an email platform.
-- Confirm that `hello@cathcrochets.co.uk` exists, or replace it throughout `index.html` and `app.js`.
+- Confirm that `cathcrochetsstore@gmail.com` is the preferred public contact address.
 - Replace the placeholder Instagram link in `index.html` with Cath's real profile.
 - Confirm postage prices, dispatch times, business identity, returns address, and policy wording.
 - Add real analytics only after wiring it into the consent choice.

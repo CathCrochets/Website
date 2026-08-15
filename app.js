@@ -212,7 +212,7 @@ const policies = {
     <h3>Information collected</h3><p>When you place an order or send an enquiry, the shop may receive your name, email address, delivery address, order details and messages. Card details should be handled by the connected payment provider and not stored by Cath Crochets.</p>
     <h3>Why it is used</h3><ul><li>To fulfil orders and provide customer support</li><li>To respond to custom-order enquiries</li><li>To meet tax, accounting and legal obligations</li><li>To send marketing only where you have actively opted in</li></ul>
     <h3>Sharing and retention</h3><p>Information is shared only with services needed to run the shop, such as hosting, payment and delivery providers. Order records may need to be retained for up to six years for UK tax purposes. Enquiries that do not become orders should be deleted when no longer needed.</p>
-    <h3>Your rights</h3><p>You may ask to access, correct or erase your information, or object to certain uses. Contact <a href="mailto:hello@cathcrochets.co.uk">hello@cathcrochets.co.uk</a>. You may also complain to the UK Information Commissioner’s Office.</p>
+    <h3>Your rights</h3><p>You may ask to access, correct or erase your information, or object to certain uses. Contact <a href="mailto:cathcrochetsstore@gmail.com">cathcrochetsstore@gmail.com</a>. You may also complain to the UK Information Commissioner’s Office.</p>
     <p><strong>Launch note:</strong> Replace this concept notice with details of the actual hosting, checkout, analytics and email providers before taking live orders.</p>`,
   delivery: `
     <p class="eyebrow"><span></span> Shop policy</p><h2>Delivery &amp; returns</h2>
@@ -338,7 +338,7 @@ document.querySelector('#enquiry-form').addEventListener('submit', event => {
   const data = new FormData(event.currentTarget);
   const subject = encodeURIComponent(`Custom crochet enquiry from ${data.get('name')}`);
   const body = encodeURIComponent(`Hi Cath,\n\nI'd love to ask about a custom piece.\n\nName: ${data.get('name')}\nEmail: ${data.get('email')}\nType: ${data.get('type')}\nBudget: ${data.get('budget')}\nNeeded by: ${data.get('date') || 'No fixed date'}\n\nMy idea:\n${data.get('details')}\n\nThanks!`);
-  window.location.href = `mailto:hello@cathcrochets.co.uk?subject=${subject}&body=${body}`;
+  window.location.href = `mailto:cathcrochetsstore@gmail.com?subject=${subject}&body=${body}`;
   showToast('Your email app should open with the enquiry ready');
 });
 
