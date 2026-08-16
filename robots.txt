@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cathcrochets.github.io/Website/sitemap.xml
