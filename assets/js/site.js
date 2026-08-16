@@ -288,7 +288,7 @@
            Nothing is lost, it just takes one more tap. */
         if (!formId) {
           var body = toText(lines) +
-            '\n\n(Sent from cathcrochets.co.uk. If your email app opened, ' +
+            '\n\n(Sent from cathcrochets.github.io/Website. If your email app opened, ' +
             'just press send and it will reach Cath.)';
           window.location.href = 'mailto:' + (CFG.email || '') +
             '?subject=' + encodeURIComponent(subject) +

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://cathcrochets.co.uk/sitemap.xml
+Sitemap: https://cathcrochets.github.io/Website/sitemap.xml

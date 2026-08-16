@@ -31,18 +31,24 @@ mailingListFormId: 'abcdwxyz',
 The free tier covers 50 submissions a month. Anything else you might want to change, the contact
 email and the social links, is in that same file.
 
-### 2. Set the domain
+### 2. When you buy a domain, update the absolute URLs
 
-Every page has a `<link rel="canonical">` and the sitemap has full URLs, all currently pointing at
-`https://cathcrochets.co.uk/`. If the real domain is different, find and replace that string across
-the project. It appears in the eight HTML pages, `sitemap.xml` and `robots.txt`.
+The site is live at **https://cathcrochets.github.io/Website/** and every canonical tag, Open Graph
+URL and sitemap entry points there, which is what search engines need while that is the real address.
 
-For a custom domain on GitHub Pages, add a file called `CNAME` in the root containing just the
-domain, then point the DNS at GitHub. Their
-[docs cover it](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site).
+If you buy a domain later, three things have to happen together:
 
-Until then the site works fine on `username.github.io/Website`. Every link and asset path is
-relative, so nothing needs rewriting to run in a subfolder.
+1. Add a file called `CNAME` in the root containing nothing but the domain, e.g. `cathcrochets.co.uk`
+2. Point the DNS at GitHub, which their
+   [docs cover](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site)
+3. Find and replace `https://cathcrochets.github.io/Website/` with `https://yourdomain.co.uk/`
+   across the project. It appears in the eight HTML pages, `sitemap.xml`, `robots.txt` and
+   `assets/js/site.js`
+
+Skipping step 3 leaves the canonical tags pointing at the old address, which tells Google to keep
+indexing that one instead of your new domain.
+
+Every internal link and asset path is relative, so none of those need touching either way.
 
 One consequence worth knowing: `404.html` also uses relative paths, which is what a project
 subfolder needs. The site is flat, so a mistyped URL lands one level deep and the 404 page still
