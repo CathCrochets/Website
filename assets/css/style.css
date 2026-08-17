@@ -1103,19 +1103,57 @@ html:not(.js) .js-only { display: none !important; }
    -------------------------------------------------------------------------- */
 
 .diagram {
+  /* figure carries a browser default margin of 1em 40px, which would make
+     every diagram narrower and lower than the panel sitting next to it */
+  margin: 0;
+  display: flex;
+  flex-direction: column;
   background: var(--card);
   border: 1px solid var(--line-soft);
   border-radius: var(--r-lg);
   padding: 1.25rem;
   box-shadow: var(--shadow-s);
 }
-.diagram svg { width: 100%; height: auto; }
+.diagram svg, .diagram img { width: 100%; height: auto; }
 .diagram figcaption {
   font-size: var(--fs-small);
   color: var(--ink-2);
   margin-top: .9rem;
   padding-top: .9rem;
   border-top: 2px dashed var(--line-soft);
+}
+/* when a diagram is stretched by its grid row, keep the caption on the floor */
+.diagram figcaption:last-child { margin-top: auto; }
+
+/* the yarn charts. Five cards, so a three column grid would leave a ragged
+   row. Flex with a fixed basis keeps every card the same width and centres
+   the two that are left over, which reads as deliberate rather than broken. */
+.colour-charts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+.colour-charts .diagram {
+  flex: 0 1 calc((100% - 2rem) / 3);
+  min-width: 14rem;
+  padding: .8rem;
+}
+.colour-charts figcaption {
+  font-size: var(--fs-small);
+  font-weight: 650;
+  text-align: center;
+  margin-top: .8rem;
+  padding-top: .8rem;
+}
+/* one up on a phone, two up on a tablet, three up once there is room.
+   Fixed bases rather than flex-grow, so every card stays the same width
+   no matter how many end up on the last row. */
+@media (max-width: 30rem) {
+  .colour-charts .diagram { flex-basis: 100%; min-width: 0; }
+}
+@media (min-width: 30.0625rem) and (max-width: 56rem) {
+  .colour-charts .diagram { flex-basis: calc((100% - 1rem) / 2); min-width: 0; }
 }
 
 /* --------------------------------------------------------------------------
